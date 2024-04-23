@@ -17,6 +17,7 @@ export default function WeatherSearch(){
             humidity: response.data.main.humidity,
             icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2px.png`,
             description: response.data.weather[0].description
+
         });
         }
 
@@ -31,7 +32,7 @@ export default function WeatherSearch(){
     function updateSearch(event){
         setCity(event.target.value);
     }
-      
+   
      let form =(
         <form onSubmit={handleSubmit}>
             <input type="search" placeholder="Enter location.. " onChange={updateSearch}/>
@@ -46,6 +47,7 @@ export default function WeatherSearch(){
          <br/>
          <br/>
          <strong>{city}</strong>
+
         
                 <ul>
                     <li>Temperature: {Math.round(weather.temperature)} C</li>
